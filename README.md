@@ -1,7 +1,6 @@
 # NASOW package
 
-Welcome to the (small and simple) NASOW script! NASOW stands for **Nameserver reSolver for WSL**. It's a simple small python script which synchronizes DNS servers for WSL from Windows.
-This repository contains its source code and documentation.
+Welcome to the **Nameserver reSolver for WSL**! Nasow is a simple small python script which synchronizes DNS servers for WSL from Windows.
 
 ## Features
 
