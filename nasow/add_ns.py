@@ -15,7 +15,7 @@ def get_dns_servers():
     servers = json.loads(output)
     if not isinstance(servers, list):
         servers = [servers]
-    return [f"nameserver {s}" for s in servers]
+    return list(set([f"nameserver {s}" for s in servers]))
 
 
 def dns_from_wsl():
@@ -36,7 +36,7 @@ def dns_to_write(dns_from_windows, dns_in_wsl):
     Given two lists of dns server lines, return a list that contains all unique lines
     preserving the order of the first list and appending any new lines from the second list
     '''
-    result = list(dns_from_windows)  # Start with all from Windows
+    result = dns_from_windows  # Start with all from Windows
     for line in dns_in_wsl:
         if line not in result:
             result.append(line)
